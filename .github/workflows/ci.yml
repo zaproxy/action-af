@@ -1,0 +1,37 @@
+on:
+  push:
+
+jobs:
+  ci:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
+      - run: npm ci
+      - run: npm run format-check
+      - run: npm run test
+      - run: npm run build
+      - name: Ensure dist/index.js is up to date
+        run: |
+          git diff --text dist/index.js
+          [[ -z $(git status -s) ]]
+
+  self_test:
+    name: Self Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        with:
+          automation_file: test/working.yml
+      - uses: ./
+        id: failing-job
+        continue-on-error: true
+        with:
+          automation_file: test/failing.yml
+      - run: exit 1
+        if: steps.failing-job.status == 'success'

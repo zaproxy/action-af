@@ -1,2 +1,2 @@
 # action-af
-A GitHub Action for running OWASP ZAP Automation Framework plans
+A GitHub Action for running ZAP Automation Framework plans.

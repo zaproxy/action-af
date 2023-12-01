@@ -1,0 +1,39 @@
+{
+  "name": "action-af",
+  "version": "0.0.0",
+  "description": "ZAP Automation Framework Action",
+  "main": "src/index.ts",
+  "scripts": {
+    "format-check": "prettier --check .",
+    "test": "jest",
+    "build": "ncc build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaproxy/action-af.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "ZAP"
+  ],
+  "author": "ZAP Team",
+  "bugs": {
+    "url": "https://github.com/zaproxy/action-af/issues"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "@actions/exec": "^1.1.1",
+    "@zaproxy/actions-common-scans": "^0.2.0",
+    "ensure-error": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^27.4.1",
+    "@vercel/ncc": "^0.33.4",
+    "jest": "^27.5.1",
+    "prettier": "^2.6.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "tslib": "^2.3.1"
+  }
+}

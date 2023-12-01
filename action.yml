@@ -1,0 +1,32 @@
+name: 'OWASP ZAP Automation Framework'
+description: 'Scans a Web Application with the OWASP ZAP Automation Framework'
+branding:
+  icon: 'zap'
+  color: 'blue'
+inputs:
+  token:
+    description: 'GitHub Token to create issues in the repository'
+    required: false
+    default: ${{ github.token }}
+  docker_name:
+    description: 'The Docker file to be executed'
+    required: true
+    default: 'owasp/zap2docker-stable'
+  automation_file:
+    description: 'The YAML file containing the jobs to be executed'
+    required: true
+  issue_title:
+    description: 'The title for the GitHub issue to be created'
+    required: false
+    default: 'ZAP Full Scan Report'
+  fail_action:
+    description: 'The action status will be set to fail if ZAP identifies any alerts during the full scan'
+    required: false
+    default: 'false'
+  allow_issue_writing:
+    description: 'Whether GitHub issues should be created or not'
+    required: false
+    default: 'true'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'

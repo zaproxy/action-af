@@ -4,11 +4,7 @@ on:
   push:
     branches:
       - main
-    paths-ignore:
-      - '**.md'
   pull_request:
-    paths-ignore:
-      - '**.md'
   workflow_dispatch:
 
 jobs:
@@ -18,3 +14,22 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+
+    - run: sudo systemctl start nginx
+
+    - name: ZAP Plan
+      uses: ./
+      id: af-plan
+      with:
+        plan: '.github/workflows/zap/af-plan.yml'
+
+    - name: ZAP Plan with Error
+      continue-on-error: true
+      uses: ./
+      id: af-plan-error
+      with:
+        plan: '.github/workflows/zap/af-plan-error.yml'
+
+    - name: Check ZAP Plan with Error Failed
+      run: exit 1
+      if: ${{ !cancelled() && steps.af-plan-error.outcome == 'success' }}

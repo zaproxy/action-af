@@ -1,0 +1,15 @@
+---
+env:
+  contexts:
+  - name: "Context"
+    urls:
+    - "http://localhost/"
+  parameters:
+    failOnError: true
+    failOnWarning: true
+    progressToStdout: true
+jobs:
+- requests:
+  # Should cause a warning
+  - url: "http://localhost:1234/"
+  type: "requestor"

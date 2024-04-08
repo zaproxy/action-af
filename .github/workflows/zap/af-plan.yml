@@ -1,0 +1,14 @@
+---
+env:
+  contexts:
+  - name: "Context"
+    urls:
+    - "http://localhost/"
+  parameters:
+    failOnError: true
+    failOnWarning: true
+    progressToStdout: true
+jobs:
+- requests:
+  - url: "http://localhost/"
+  type: "requestor"

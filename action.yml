@@ -1,0 +1,19 @@
+name: 'ZAP Automation Framework'
+description: 'Runs an Automation Framework plan'
+branding:
+  icon: 'zap'
+  color: 'blue'
+inputs:
+  plan:
+    description: 'The file system path to the Automation Framework plan to run.'
+    required: true
+  docker_name:
+    description: 'The Docker image to be used.'
+    required: true
+    default: 'ghcr.io/zaproxy/zaproxy:stable'
+  cmd_options:
+    description: 'Additional command line options to start ZAP with.'
+    required: false
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

@@ -1,0 +1,30 @@
+{
+  "name": "action-af",
+  "version": "1.0.0",
+  "description": "ZAP AF Action",
+  "main": "index.js",
+  "scripts": {
+    "package": "ncc build index.js -o dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zaproxy/action-af.git"
+  },
+  "keywords": [
+    "GitHub",
+    "Actions",
+    "ZAP",
+    "Automation Framework"
+  ],
+  "author": "ZAP Team",
+  "bugs": {
+    "url": "https://github.com/zaproxy/action-af/issues"
+  },
+  "dependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/exec": "^1.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.36.1"
+  }
+}

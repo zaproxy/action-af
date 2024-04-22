@@ -33,3 +33,12 @@ jobs:
     - name: Check ZAP Plan with Error Failed
       run: exit 1
       if: ${{ !cancelled() && steps.af-plan-error.outcome == 'success' }}
+
+    - name: ZAP Plan with File Creation
+      uses: ./
+      id: af-plan-files
+      with:
+        plan: '.github/workflows/zap/af-plan-files.yml'
+
+    - name: Check ZAP Plan with File Creation
+      run: "[ -f sarif.json ]"

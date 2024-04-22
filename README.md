@@ -5,7 +5,7 @@ A GitHub Action for running [ZAP Automation Framework](https://www.zaproxy.org/d
 
 ### `plan`
 
-**Required** The file system path to the Automation Framework plan to run.
+**Required** The file system path or URL to the Automation Framework plan to run.
 
 ### `docker_name`
 
@@ -14,6 +14,10 @@ A GitHub Action for running [ZAP Automation Framework](https://www.zaproxy.org/d
 ### `cmd_options`
 
 **Optional** Additional [command line options](https://www.zaproxy.org/docs/desktop/cmdline/) for ZAP.
+
+## Files
+
+Files created with the plan that need to be used after the plan has finished should be saved to the `/zap/wrk/` directory, which is mapped to the [GITHUB_WORKSPACE](https://docs.github.com/en/actions/learn-github-actions/variables) directory.
 
 ## Environment variables
 

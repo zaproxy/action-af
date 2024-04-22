@@ -1,0 +1,20 @@
+---
+env:
+  contexts:
+  - name: "Context"
+    urls:
+    - "http://localhost/"
+  parameters:
+    failOnError: true
+    failOnWarning: true
+    progressToStdout: true
+jobs:
+- requests:
+  - url: "http://localhost/"
+  type: "requestor"
+- parameters:
+    template: "sarif-json"
+    reportDir: "/zap/wrk/"
+    reportFile: "sarif.json"
+  name: "sarif-report"
+  type: "report"

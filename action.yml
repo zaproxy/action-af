@@ -1,5 +1,5 @@
-name: 'ZAP Automation Framework'
-description: 'Runs an Automation Framework plan'
+name: 'ZAP Automation Framework Scan'
+description: 'Runs a ZAP Automation Framework plan. Powerful and flexible DAST scanning.'
 branding:
   icon: 'zap'
   color: 'blue'

@@ -15,6 +15,10 @@ A GitHub Action for running [ZAP Automation Framework](https://www.zaproxy.org/d
 
 **Optional** Additional [command line options](https://www.zaproxy.org/docs/desktop/cmdline/) for ZAP.
 
+## Exit Value
+
+The action will exit with the value of the plan, as indicated in the [Automation Framework documentation](https://www.zaproxy.org/docs/automate/automation-framework/#exit-value).
+
 ## Files
 
 Files created with the plan that need to be used after the plan has finished should be saved to the `/zap/wrk/` directory, which is mapped to the [GITHUB_WORKSPACE](https://docs.github.com/en/actions/learn-github-actions/variables) directory.

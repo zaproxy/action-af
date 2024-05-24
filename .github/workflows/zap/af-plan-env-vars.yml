@@ -1,0 +1,14 @@
+---
+env:
+  contexts:
+  - name: "Context"
+    urls:
+    - ${TARGET_URL}
+  parameters:
+    failOnError: true
+    failOnWarning: true
+    progressToStdout: true
+jobs:
+- requests:
+  - url: ${TARGET_URL}
+  type: "requestor"

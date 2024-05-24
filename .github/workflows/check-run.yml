@@ -23,6 +23,16 @@ jobs:
       with:
         plan: '.github/workflows/zap/af-plan.yml'
 
+    - name: ZAP Plan Env Vars
+      uses: ./
+      id: af-plan-env-vars
+      env:
+        TARGET_URL: "http://localhost/"
+      with:
+        plan: '.github/workflows/zap/af-plan-env-vars.yml'
+        docker_env_vars: |
+          TARGET_URL
+
     - name: ZAP Plan with Error
       continue-on-error: true
       uses: ./

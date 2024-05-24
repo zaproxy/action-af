@@ -11,6 +11,10 @@ inputs:
     description: 'The Docker image to be used.'
     required: true
     default: 'ghcr.io/zaproxy/zaproxy:stable'
+  docker_env_vars:
+    description: 'The env vars that should be passed to the Docker container running ZAP.'
+    required: false
+    default: ''
   cmd_options:
     description: 'Additional command line options to start ZAP with.'
     required: false

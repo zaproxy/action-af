@@ -11,6 +11,17 @@ A GitHub Action for running [ZAP Automation Framework](https://www.zaproxy.org/d
 
 **Optional** if specified must not be empty. The name of the [ZAP Docker image](https://www.zaproxy.org/docs/docker/about/#install-instructions) to be used. By default the action runs the stable image.
 
+### `docker_env_vars`
+
+**Optional** The names of the environment variables that should be passed to the Docker container for use in the plan, e.g.:
+```yaml
+docker_env_vars: |
+  MY_TARGET_URL
+  MY_USER_NAME
+  MY_USER_PASSWORD
+```
+See also [Environment variables](#environment-variables).
+
 ### `cmd_options`
 
 **Optional** Additional [command line options](https://www.zaproxy.org/docs/desktop/cmdline/) for ZAP.
@@ -26,7 +37,7 @@ Files created with the plan that need to be used after the plan has finished sho
 ## Environment variables
 
 If set, the following [ZAP authentication environment variables](https://www.zaproxy.org/docs/authentication/handling-auth-yourself/#authentication-env-vars)
-will be copied into the docker container:
+will be copied into the Docker container:
 
 - `ZAP_AUTH_HEADER_VALUE`
 - `ZAP_AUTH_HEADER`
@@ -34,7 +45,7 @@ will be copied into the docker container:
 
 ## Example usage
 
-```
+```yaml
 steps:
   - name: ZAP Scan
     uses: zaproxy/action-af@v0.1.0

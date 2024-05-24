@@ -5,6 +5,8 @@ All notable changes to this GitHub action will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
+### Added
+ - Allow to specify the environment variables that should be passed to the Docker container to be used by the Automation Framework plan.
 
 ## [0.1.0] - 2024-04-23
 ### Added

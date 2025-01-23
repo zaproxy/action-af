@@ -48,7 +48,7 @@ will be copied into the Docker container:
 ```yaml
 steps:
   - name: ZAP Scan
-    uses: zaproxy/action-af@v0.1.0
+    uses: zaproxy/action-af@v0.2.0
     with:
       plan: '.github/workflows/zap/plan.yml'
 ```

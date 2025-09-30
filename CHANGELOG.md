@@ -5,6 +5,9 @@ All notable changes to this GitHub action will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
+### Changed
+- Update dependency.
+- Run with node24.
 
 ## [0.2.0] - 2025-01-24
 ### Added

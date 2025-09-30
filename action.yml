@@ -19,5 +19,5 @@ inputs:
     description: 'Additional command line options to start ZAP with.'
     required: false
 runs:
-  using: 'node20'
+  using: 'node24'
   main: 'dist/index.js'
